@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveController : MonoBehaviour
+{
+    Vector3 pos;
+    float speed=5f;
+    void Start()
+    {
+        pos=transform.position;
+    }
+    // Update is called once per frame
+    void Update()
+    {
+       float x_move=Input.GetAxis("Horizontal");
+       float z_move=Input.GetAxis("Vertical"); 
+       pos.x+=-x_move*Time.deltaTime*speed;
+       pos.z+=-z_move*Time.deltaTime*speed;
+       transform.position=pos;
+        
+    }
+
+}
